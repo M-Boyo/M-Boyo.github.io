@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bizou</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mobile.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="icon" href="visuals/favicon.svg" type="image/svg+xml">
+    <!--<script src="scripts/main.js" defer></script>-->
+    <script src="scripts/hash-router.js" defer></script>
+
 </head>
 
 <body>
-    <div class="header">
-        <marquee behavior="alternate" direction="left" scrollamount="4" >
-            💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷
-        </marquee>
-        <h1>BIZOU</h1>
-        <marquee behavior="alternate" direction="right" scrollamount="4">
-            💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷
-        </marquee>
+    <header class="header">
+        <div class="header__title">
+            <marquee class="header__marquee" behavior="alternate" direction="left" scrollamount="4">
+                💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷
+            </marquee>
+            <h1 class="header__heading">BIZOU</h1>
+            <marquee class="header__marquee" behavior="alternate" direction="right" scrollamount="4">
+                💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷
+            </marquee>
+        </div>
+        <nav class="navbar">
+            <a class="btn navbar__btn" href="#message">message</a>
+            <a class="btn navbar__btn" href="#login">Connexion</a>
+            <a class="btn navbar__btn" href="#register">Inscription</a>
+        </nav>
+    </header>
 
-    </div>
-   
+    <main class="main-content">
+        <div id="content"></div>
+    </main>
 </body>
 
 </html>
