@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Jua&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
+
 @font-face {
     font-family: 'BILLO';
     src: url('../fonts/BILLO___.TTF');
@@ -8,8 +10,6 @@
     src: url('../fonts/Playthings.ttf');
     font-weight: 0;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Jua&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
 
 #content {
     margin-bottom: 10em;
@@ -23,7 +23,7 @@ body {
 }
 
 .header {
-    margin-bottom: 2em;
+    margin-bottom: 0;
 
 }
 
@@ -38,6 +38,7 @@ body {
     padding: 0;
     border-radius: 0 0 20px 20px;
     box-shadow: #C9184A 0px 0.1px 1px 1px;
+    
     z-index: 1;
     position: relative;
     user-select: none;
@@ -70,7 +71,7 @@ body {
     padding: 0;
     color: #FFF0F3;
     font-family: BILLO;
-    font-size: 4em;
+    font-size: 4.2em;
     text-align: center;
     text-shadow: #851031 0px 1px 2px;
 }
@@ -91,13 +92,13 @@ body {
     display: flex;
     align-items: center;
     margin: 6px 8px;
-
 }
 
 .main-content {
     padding: 1em;
     border-radius: 18px;
     margin: 2em 3em;
+    padding-top: 0;
 }
 
 .primary-nav {
@@ -122,8 +123,8 @@ body {
 }
 
 .primary-nav__item {
-    background: linear-gradient(#ff6c87 0%, #ff4d6ea3 100%);
-    backdrop-filter: blur(5px);
+    background: linear-gradient(#ff6c87 0%, #ff4d6ebc 100%);
+    backdrop-filter: blur(3px);
     height: 75px;
     display: flex;
     align-items: center;
@@ -139,7 +140,7 @@ body {
 }
 
 .primary-nav__item:hover {
-    background: linear-gradient(#FF4D6D 0%, #ff6c87 100%);
+    background: linear-gradient(#ff4d6ebc 0%, #ff6c87 100%);
     color: #FFF0F3;
 }
 
@@ -159,30 +160,36 @@ body {
     font-weight: 100;
 }
 
-.primary-nav__link:hover {
+.primary-nav__link:hover {  
     color: #FFF0F3;
     text-shadow: #b21743 0px 2px 2px;
 }
 
 .btn {
     background-color: #FF4D6D;
-    background: linear-gradient(#ff6c87 0%, #FF4D6D 100%);
+    background: linear-gradient(#ff4d6ea3    0%, #ff6c87 100%);
+    background: linear-gradient(#ff6c87 40%, #FF4D6D 100%);
     color: #FFF0F3;
-    box-shadow: #C9184A 0px 0px 2px 1px;
-    font-weight: 400;
+    box-shadow: #C9184A 0px 0.8px 0.9px 0.2px;
     border: none;
     padding: 8px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-family: 'Quicksand', sans-serif;
-    text-shadow: #b21743 0px 1px 2px;
-    font-size: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-shadow: #cc2c5a 0px 1px 2px;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 100px;
+    box-sizing: border-box;
     transition: 300ms;
+    aspect-ratio: 7/2;
     transition: background-color 0.3s ease, color 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .navbar__btn {
@@ -251,9 +258,10 @@ body {
     display: flex;
     font-family: 'Playthings', sans-serif;
     font-weight: 400;
-    font-size: 3em;
+    font-size: 2.5em;
     text-align: center;
     margin-top: 0;
+    margin-bottom: 0;
     text-shadow: #b21743 0px 1px 2px;
 /* 
     background: #ff8fa4;
@@ -266,7 +274,7 @@ body {
     color: #C9184A;
     font-family: 'Nunito', sans-serif;
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1.5em;
     text-align: center;
 }
 
@@ -290,12 +298,13 @@ body {
     text-align: left;
     text-shadow: #b21743 0px 2px 2px;
     width: 100%;
+    padding: 6px 0;
     background: #ff8fa4;
     border-radius: 12px;
-    box-shadow: #f77890 0px 1px 1px 1px;
-    background: #FF6F91;
+    background: linear-gradient(#FF4D6D 0%, #FF4D6D 100%);
     margin: 0;
-    margin-bottom: 12px;
+    margin-bottom: 10.24px;
+    box-shadow: #C9184A 0px 0.1px 1px 1px;
     
 }
 
@@ -326,51 +335,55 @@ body {
 }
 
 .feed {
-    background: #fff0f3;
+    box-sizing: border-box;
+    /* background: #ffdae1; */
     border-radius: 16px;
-    box-shadow: 0 0px 3px #ecc5cc;
-    width: auto;
-    margin: 0 auto;
+    /* box-shadow: 0 0px 3px #ecc5cc; */
+    /* padding: 1em; */
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 2em;
-    padding: 1em;
+    gap: 1em;
 }
 
 .feed-item {
-    border-radius: 18px;
-    padding: 1.5em;
-    background: #ffb0c0;
-    
+    border-radius: 12px;
+    padding: 1em 1em;
+    background: #ffdae1;
+    box-shadow: #ecc5cc 0px 0.1px 1px 1px;
+    /* border: 1px solid #C9184A; */
 }
 
 .feed-item:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 8px 32px 0 #ffb3c6, 0 2px 8px 0 #C9184A;
-    background: linear-gradient(120deg, #ffe5ec 60%, #ffdae1 100%);
+    background: #ffd4dc;
+}
+
+.feed-item:active {
+    background: #ffdae1;
 }
 
 .feed-item__author {
     font-family: 'Playthings', sans-serif;
-    font-size: 1.2em;
-    color: #FF4D6D;
-    font-weight: bold;
-    margin-bottom: 0.2em;
-    letter-spacing: 0.5px;
+    font-size: 1.7em;
+    color: #fd698e;
+    font-weight: 500;
+    padding-bottom: 0.6em;
+    border-radius: 8px;
+    text-decoration: none;
 }
 
 .feed-item__date {
-    font-size: 0.9em;
+    font-size: 1.29em;
     color: #b21743;
     opacity: 0.7;
-    margin-bottom: 0.5em;
 }
 
 .feed-item__content {
-    font-size: 1.15em;
+    font-size: 1.5em;
     color: #C9184A;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: 'Nunito', sans-serif;
+    line-height: 2em;
+    font-weight: 500;
     margin-bottom: 0.5em;
 }
 
@@ -381,14 +394,44 @@ body {
 }
 
 .feed-item__btn {
-    background: linear-gradient(#ffb3c6 0%, #FF4D6D 100%);
+    background: #ffb3c6;
+    /* background: linear-gradient(#FF4D6D 0%, #FF4D6D 100%); */
     color: #fff0f3;
     border: none;
     border-radius: 100px;
     padding: 0.4em 1.2em;
     font-size: 1em;
     cursor: pointer;
-    box-shadow: 0 1px 3px #ecc5cc;
+    /* border: 0.1px solid #ff8ca1; */
+    /* box-shadow: #ecc5cc 0px 0.1px 1px 1px; */
+    box-shadow: #ea4674 0px 0.3px 1.5px 0.1px;
+    /* border: 1px solid #C9184A; */
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.feed-item__like-count {
+    font-size: 13px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    margin: 0 0.2em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.feed-item__btn-text {
+    font-size: 13px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 750;
+    margin: 0 0.5em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #fff0f3;
 }
 
 .feed-item__btn:hover {
@@ -397,7 +440,15 @@ body {
     box-shadow: 0 2px 8px #ffb3c6;
 }
 
-/* ...existing code... */
+.feed-item__btn-icon {
+    font-size: 13px;
+    text-shadow: #b21743 0px 0px 1px;
+    color: #FF4D6D;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
 
 .form-section {
     max-width: 80%;
