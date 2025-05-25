@@ -1,17 +1,24 @@
+<?php
+// filepath: c:\Users\sailv\Desktop\Projet web\index.php
+session_start();
+setlocale(LC_ALL, 'fr_FR');
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bienvenue sur Bizou !!">
     <title>Bizou</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/transition.css">
     <link rel="stylesheet" href="styles/music-player.css">
-    <link rel="icon" href="visuals/favicon.svg" type="image/svg+xml">
     <script src="scripts/main.js" defer></script>
-    <script src="scripts/hash-router.js" defer></script>
+    <script src="scripts/url-router.js" defer></script>
+
 
 
 </head>
@@ -25,7 +32,7 @@
                     🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷
                     💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷 💗 🩷
                 </marquee>
-                <a href="#">
+                <a href="/">
                     <h1 class="header__heading">BIZOU</h1>
 
                 </a>
@@ -37,8 +44,6 @@
 
             </div>
         </div>
-
-
         <nav class="navbar">
             <div id="music-player" class="navbar__music-player">
                 <audio id="audio-control" controls="" controlslist="noplaybackrate nodownload"
@@ -47,12 +52,19 @@
                     <button class="btn music-player__btn music-player__btn--prev">⏮</button>
                     <button class="btn music-player__btn music-player__btn--next">⏭</button>
                     <span class="music-player__current-song">Aucune chanson en cours</span>
-
                 </div>
             </div>
             <div class="navbar__links">
-                <a class="btn navbar__btn" href="#login">Connexion<a>
-                <a class="btn navbar__btn" href="#register">Inscription</a>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <a class="btn navbar__btn" href="/profile">Mon profil</a>
+                    <form action="php/_logout.php" method="post" class="navbar__logout-form">
+                        <button type="submit" class="btn navbar__btn">Déconnexion</button>
+                    <!-- <a class="btn navbar__btn" href="/php/_logout.php">Déconnexion</a> -->
+                    </form>
+                <?php else: ?>
+                    <a class="btn navbar__btn" href="/login">Connexion</a>
+                    <a class="btn navbar__btn" href="/register">Inscription</a>
+                <?php endif; ?>
             </div>
         </nav>
     </header>
@@ -61,18 +73,18 @@
         <nav class="primary-nav">
             <ul class="primary-nav__list">
                 <li class="primary-nav__item">
-                    <a class="primary-nav__link" href="#">🏠 Accueil</a>
+                    <a class="primary-nav__link" href="/">🏠 Accueil</a>
                 </li>
                 <li class="primary-nav__item">
-                    <a class="primary-nav__link" href="#message">🌠 Publications</a>
-                </li>
-
-                <li class="primary-nav__item">
-                    <a class="primary-nav__link" href="#contact">📧 Contact</a>
+                    <a class="primary-nav__link" href="/message">🌠 Publications</a>
                 </li>
 
                 <li class="primary-nav__item">
-                    <a class="primary-nav__link" href="#about">📖 À propos</a>
+                    <a class="primary-nav__link" href="/contact">📧 Contact</a>
+                </li>
+
+                <li class="primary-nav__item">
+                    <a class="primary-nav__link" href="/about">📖 À propos</a>
                 </li> 
 
 

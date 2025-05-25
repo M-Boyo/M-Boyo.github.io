@@ -1,7 +1,22 @@
+<?php
+require_once '../php/_home.php';
+$db_path = __DIR__ . '/../bizou.sqlite3';
+try {
+    $pdo = new PDO("sqlite:" . $db_path);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Database connection failed: " . $e->getMessage());
+}
+$messages = getMessagesFromDatabase($pdo);
+echo "<!-- Messages fetched successfully " . (is_array($messages) ? count($messages) : 0) . " messages found -->";
+
+?>
+
 <div class="homepage-section">
     <h1 class="homepage-section__title">💗 Bienvenue sur Bizou 💗</h1>
     <h2 class="homepage__subtitle">
-        Le site de rencontre pour les amoureux de la nature
+        La maison de tout les zouzous
     </h2>
     <div class="homepage">
         <p class="homepage__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quisquam tempora
@@ -21,6 +36,29 @@
             <span class="feed-section__text">Fil d'actualité</span>
         </h2>
         <div class="feed">
+            <?php if (empty($messages)): ?>
+                <p>Y a personne ≡(▔﹏▔)≡</p>
+            <?php else: ?>
+                <?php foreach ($messages as $message): ?>
+                    <div class="feed-item">
+                        <a href="#" class="feed-item__author"><?= displayAuthor($message['UserId']) ?></a>
+                        <div class="feed-item__date"><?= date('j F Y', ($message['Date'])) ?></div>
+                        <div class="feed-item__content"><?= htmlspecialchars($message['Content']) ?></div>
+                        <div class="feed-item__actions">
+                            <button class="feed-item__btn">
+                                <span class="feed-item__btn-icon">💗</span>
+                                <span class="feed-item__like-count"><?= htmlspecialchars($message['LikeCount']) ?></span>
+                            </button>
+                            <button class="feed-item__btn">
+                                <span class="feed-item__btn-icon">💬</span>
+                                <span class="feed-item__btn-text">Commenter</span>
+                            </button>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+        <!-- <div class="feed">
             <div class="feed-item">
                 <a href="" class="feed-item__author">Alice</a>
                 <div class="feed-item__date">24 mai 2025</div>
@@ -72,6 +110,6 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
