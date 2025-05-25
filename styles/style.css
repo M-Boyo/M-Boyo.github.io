@@ -394,7 +394,7 @@ body {
 }
 
 .feed-item__btn {
-    background: #ffb3c6;
+    background: #ffa8be;
     /* background: linear-gradient(#FF4D6D 0%, #FF4D6D 100%); */
     color: #fff0f3;
     border: none;
@@ -413,6 +413,18 @@ body {
     display: flex;
 }
 
+.feed-item__btn:hover {
+    background: #ffb3c6;
+    color: #fff;
+}
+
+.feed-item__btn:active {
+    background: #ffa8be;
+    color: #fff0f3;
+    box-shadow: #ea4674 0px 0px 0px;
+    position: relative;
+    top: 1px;
+}
 .feed-item__like-count {
     font-size: 13px;
     font-family: 'Nunito', sans-serif;
@@ -432,12 +444,6 @@ body {
     justify-content: center;
     align-items: center;
     color: #fff0f3;
-}
-
-.feed-item__btn:hover {
-    background: linear-gradient(90deg, #ffb3c6 70%, #FF4D6D 100%);
-    color: #fff;
-    box-shadow: 0 2px 8px #ffb3c6;
 }
 
 .feed-item__btn-icon {
@@ -521,7 +527,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 20px 0;
+    margin: 0px 0;
     width: fit-content;
 }
 
@@ -534,9 +540,11 @@ body {
 .form__group--email,
 .form__group--password,
 .form__group--message {
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
     width: 100%;
 }
+
+
 
 .form__label {
     font-size: 1.5em;
@@ -546,7 +554,9 @@ body {
     /* font-weight: bold; */
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
-    text-shadow: #b21743 0px 0.3px 0.5px;
+    text-shadow: #d52859 0px 1px 0.5px;
+    /* display: none; */
+    /* font-weight: 0; */
 }
 
 
@@ -558,9 +568,17 @@ body {
     border: 1px solid #FF4D6D;
     border-radius: 8px;
     box-sizing: border-box;
-    box-shadow: inset #ecc5cc 0px -0.1px 1px 1px;
-    margin-top: 5px;
     font-family: 'Nunito', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: inset #ecc5cc 0px -0.1px 5px 1px;}
+
+.form__textarea--message:focus {
+    box-shadow: inset #ecc5cc 0px -0.1px 1px 1px, 0px 0px 2px #FF4D6D;
+    border: 1px solid #FF4D6D;
+    scale: 1.01;
+    transition: all 0.3s ease;
+    outline: none;
+    /* background: linear-gradient(#ff6c87 0%, #FF4D6D 100%); */
 }
 
 .form__input--name,
@@ -572,7 +590,6 @@ body {
     font-size: 1em;
     border: 1px solid #FF4D6D;
     border-radius: 8px;
-    box-shadow: inset #ecc5cc 0px -0.1px 1px 1px;
     box-sizing: border-box;
 }
 
@@ -595,7 +612,7 @@ body {
 .form__actions {
     display: flex;
     justify-content: flex-end;
-    margin-top: 1em;
+    margin-top: 0em;
 }
 
 .form--login,
@@ -603,6 +620,7 @@ body {
     max-width: 500px;
     margin: 0 auto;
 }
+
 
 
 .error-page {

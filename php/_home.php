@@ -1,17 +1,16 @@
 <?php
-function getMessagesFromDatabase($pdo) {
-    try {
-        $stmt = $pdo->prepare("SELECT * FROM message ORDER BY Date DESC"); // Corrected table name
-        $stmt->execute();
-        $messages = $stmt->fetchAll();
-        return $messages;
-    } catch (PDOException $e) {
-        error_log("Error fetching messages: " . $e->getMessage());
-        return [];
-    }
+require_once '_header.php';
+
+// Function to fetch messages from the database
+function getMessagesFromDatabase($pdo)
+{
+    $stmt = $pdo->query("SELECT * FROM message ORDER BY Date DESC");
+    return $stmt->fetchAll();
 }
 
-function displayAuthor($author) {
+// filepath: c:\Users\sailv\Desktop\Projet web\php\_header.php
+function displayAuthor($author, $pdo)
+{
     if (empty($author)) {
         return "Anonyme";
     }
@@ -19,7 +18,6 @@ function displayAuthor($author) {
     $authorName = "";
     if (is_numeric($author)) {
         // Assuming $author is a user ID, fetch the username from the database
-        global $pdo; // Use the global PDO instance
         try {
             $stmt = $pdo->prepare("SELECT Name FROM bizou_user WHERE Id = :userId");
             $stmt->bindParam(':userId', $author, PDO::PARAM_INT);
@@ -39,8 +37,13 @@ function displayAuthor($author) {
         $authorName = htmlspecialchars($author);
     }
 
-    // Return the sanitized author name
-
     return $authorName;
 }
-?>
+
+function getLikeCount($messageId, $pdo)
+{
+    $stmt = $pdo->prepare("SELECT COUNT(*) FROM message_like WHERE MessageId = :messageId");
+    $stmt->bindParam(':messageId', $messageId, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetchColumn();
+}

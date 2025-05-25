@@ -66,13 +66,13 @@ const urlRoutes = {
     },
 
     "/profile": {
-        template: "/templates/profile.html",
+        template: "/templates/profile.php",
         title : "Profile",
         description : ""
     },
 
     "/message" : {
-        template: "/templates/message.html",
+        template: "/templates/message.php",
         title : "Message",
         description : ""
     }
@@ -96,9 +96,14 @@ const urlLocationHandler = async () => {
 
     const route = urlRoutes[location] || urlRoutes[404];
     const html = await fetch(route.template).then((response) => response.text());
+    // document.getElementById("content").innerHTML = html;
+    // If you want to animate the page transition, uncomment the line below
+    await animatePageTransition(document.getElementById("content"), route);
 
-    document.getElementById("content").innerHTML = html;
+    // document.getElementById("content").innerHTML += html;
     document.title = route.title + " | Bizou";
+    
+    
 
     document
     .querySelector('meta[name="description"]') // Use querySelector to get a single element

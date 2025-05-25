@@ -19,8 +19,6 @@ setlocale(LC_ALL, 'fr_FR');
     <script src="scripts/main.js" defer></script>
     <script src="scripts/url-router.js" defer></script>
 
-
-
 </head>
 
 <body>
@@ -57,10 +55,7 @@ setlocale(LC_ALL, 'fr_FR');
             <div class="navbar__links">
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <a class="btn navbar__btn" href="/profile">Mon profil</a>
-                    <form action="php/_logout.php" method="post" class="navbar__logout-form">
-                        <button type="submit" class="btn navbar__btn">Déconnexion</button>
-                    <!-- <a class="btn navbar__btn" href="/php/_logout.php">Déconnexion</a> -->
-                    </form>
+                    
                 <?php else: ?>
                     <a class="btn navbar__btn" href="/login">Connexion</a>
                     <a class="btn navbar__btn" href="/register">Inscription</a>

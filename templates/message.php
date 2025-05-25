@@ -1,21 +1,16 @@
+<?php
+// filepath: c:\Users\sailv\Desktop\Projet web\templates\message.php
+?>
 <section class="form-section">
-    <form class="form form--message" action="php/_message.php" method="post">
+    <form id="messageForm" class="form form--message" action="php/_message.php" method="post">
+
         <div class="form__header">
             <div class="form__icon">💗</div>
             <h2 class="form__title">Envoyer un message</h2>
             <div class="form__icon">💗</div>
         </div>
         <div class="form__body">
-            <div class="form__group form__group--name">
-                <label class="form__label" for="name">
-                    Nom
-                </label>
-                <input class="form__input form__input--name" type="text" id="name" name="name" placeholder="Entrez votre nom" required>
-            </div>
             <div class="form__group form__group--message">
-                <label class="form__label" for="message">
-                    Message
-                </label>
                 <textarea class="form__textarea form__textarea--message" id="message" name="message" placeholder="Écrivez votre message" required></textarea>
             </div>
             <div class="form__actions">
