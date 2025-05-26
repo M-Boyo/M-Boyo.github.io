@@ -71,8 +71,8 @@ const urlRoutes = {
         description : ""
     },
 
-    "/message" : {
-        template: "/templates/message.php",
+    "/publish" : {
+        template: "/templates/publish.php",
         title : "Message",
         description : ""
     }
@@ -103,14 +103,10 @@ const urlLocationHandler = async () => {
     // document.getElementById("content").innerHTML += html;
     document.title = route.title + " | Bizou";
     
-    
 
     document
     .querySelector('meta[name="description"]') // Use querySelector to get a single element
     .setAttribute("content", route.description);
-
-
-    
 
 }
 

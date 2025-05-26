@@ -2,7 +2,7 @@
 // filepath: c:\Users\sailv\Desktop\Projet web\templates\message.php
 ?>
 <section class="form-section">
-    <form id="messageForm" class="form form--message" action="php/_message.php" method="post">
+    <form id="messageForm" class="form form--message" action="php/_publish.php" method="post">
 
         <div class="form__header">
             <div class="form__icon">💗</div>

@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
     } else {
-        header("Location: /message?error=2");
+        header("Location: /publish?error=2");
         exit();
     }
 }

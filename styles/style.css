@@ -351,16 +351,17 @@ body {
     padding: 1em 1em;
     background: #ffdae1;
     box-shadow: #ecc5cc 0px 0.1px 1px 1px;
+    /* padding: 7.72px 10.24px; */
     /* border: 1px solid #C9184A; */
 }
-
+/* 
 .feed-item:hover {
     background: #ffd4dc;
 }
 
 .feed-item:active {
     background: #ffdae1;
-}
+} */
 
 .feed-item__author {
     font-family: 'Playthings', sans-serif;
@@ -382,9 +383,9 @@ body {
     font-size: 1.5em;
     color: #C9184A;
     font-family: 'Nunito', sans-serif;
-    line-height: 2em;
+    line-height: 1.5em;
     font-weight: 500;
-    margin-bottom: 0.5em;
+    /* margin-bottom: 0.5em; */
 }
 
 .feed-item__actions {
@@ -410,7 +411,8 @@ body {
     font-weight: 700;
     justify-content: center;
     align-items: center;
-    display: flex;
+    text-decoration: none;
+        display: flex;
 }
 
 .feed-item__btn:hover {
@@ -454,6 +456,30 @@ body {
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.comment {
+}
+
+.comment--even-depth {
+    background: #FFF0F3;
+    /* border-radius: 12px;
+    padding: 0.5em;
+    box-shadow: #ecc5cc 0px 0.1px 1px 1px; */
+}
+
+.comment--odd-depth {
+    background: #ffdae1;
+    /* border-radius: 12px;
+    padding: 0.5em;
+    box-shadow: #ecc5cc 0px 0.1px 1px 1px; */
 }
 
 .form-section {

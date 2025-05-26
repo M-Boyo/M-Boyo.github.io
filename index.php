@@ -71,7 +71,7 @@ setlocale(LC_ALL, 'fr_FR');
                     <a class="primary-nav__link" href="/">🏠 Accueil</a>
                 </li>
                 <li class="primary-nav__item">
-                    <a class="primary-nav__link" href="/message">🌠 Publications</a>
+                    <a class="primary-nav__link" href="/publish">🌠 Publications</a>
                 </li>
 
                 <li class="primary-nav__item">
