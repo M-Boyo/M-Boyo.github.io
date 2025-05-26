@@ -8,34 +8,24 @@ function getMessagesFromDatabase($pdo)
     return $stmt->fetchAll();
 }
 
-// filepath: c:\Users\sailv\Desktop\Projet web\php\_header.php
-function displayAuthor($author, $pdo)
-{
+function displayAuthor($author, $pdo){
     if (empty($author)) {
         return "Anonyme";
     }
 
     $authorName = "";
-    if (is_numeric($author)) {
-        // Assuming $author is a user ID, fetch the username from the database
-        try {
-            $stmt = $pdo->prepare("SELECT Name FROM bizou_user WHERE Id = :userId");
-            $stmt->bindParam(':userId', $author, PDO::PARAM_INT);
-            $stmt->execute();
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            if ($result) {
-                $authorName = htmlspecialchars($result['Name']);
-            } else {
-                $authorName = "Anonyme";
-            }
-        } catch (PDOException $e) {
-            error_log("Error fetching author: " . $e->getMessage());
-            return "Anonyme";
-        }
+
+    $stmt = $pdo->prepare("SELECT Name FROM bizou_user WHERE Id = :userId");
+    $stmt->bindParam(':userId', $author, PDO::PARAM_INT);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($result) {
+        $authorName = htmlspecialchars($result['Name']);
     } else {
-        // If it's not a numeric ID, treat it as a username
-        $authorName = htmlspecialchars($author);
+        $authorName = "Anonyme";
     }
+
+
 
     return $authorName;
 }
@@ -48,8 +38,7 @@ function getLikeCount($messageId, $pdo)
     return $stmt->fetchColumn();
 }
 
-function userLikedMessage($messageId, $userId, $pdo)
-{
+function userLikedMessage($messageId, $userId, $pdo){
     if (!$userId) return false; // User not logged in
 
     $stmt = $pdo->prepare("SELECT COUNT(*) FROM message_like WHERE UserId = :userId AND MessageId = :messageId");
@@ -66,8 +55,7 @@ function getCommentsForMessage($messageId, $pdo)
     return $stmt->fetchAll();
 }
 
-function displayComments($comments, $pdo, $depth)
-{
+function displayComments($comments, $pdo, $depth){
     foreach ($comments as $comment):
         $depthClass = ($depth % 2 == 0) ? 'comment--even-depth' : 'comment--odd-depth';
 ?>
