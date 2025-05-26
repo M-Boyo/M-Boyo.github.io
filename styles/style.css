@@ -129,6 +129,7 @@ body {
     display: flex;
     align-items: center;
     padding: 0;
+    transition: all 0.3s ease;
 }
 
 .primary-nav__item:first-child {
@@ -158,6 +159,7 @@ body {
     padding: 0 2em;
     font-family: 'Playthings', sans-serif;
     font-weight: 100;
+    transition: all 0.3s ease;
 }
 
 .primary-nav__link:hover {  
@@ -349,7 +351,7 @@ body {
 .feed-item {
     border-radius: 12px;
     padding: 1em 1em;
-    background: #ffdae1;
+    background: #fee1e6;
     box-shadow: #ecc5cc 0px 0.1px 1px 1px;
     /* padding: 7.72px 10.24px; */
     /* border: 1px solid #C9184A; */
@@ -413,6 +415,7 @@ body {
     align-items: center;
     text-decoration: none;
         display: flex;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feed-item__btn:hover {
@@ -601,7 +604,7 @@ body {
 .form__textarea--message:focus {
     box-shadow: inset #ecc5cc 0px -0.1px 1px 1px, 0px 0px 2px #FF4D6D;
     border: 1px solid #FF4D6D;
-    scale: 1.01;
+    /* scale: 1.01; */
     transition: all 0.3s ease;
     outline: none;
     /* background: linear-gradient(#ff6c87 0%, #FF4D6D 100%); */
@@ -646,7 +649,46 @@ body {
     max-width: 500px;
     margin: 0 auto;
 }
+.profile-page{
+    background: linear-gradient(#ff6c87 0%, #FF4D6D 100%);
+    border-radius: 26px;
+    width: 70%;
+    margin: auto;
+}
+.profile {
+    background: linear-gradient(#ff6c87 0%, #FF4D6D 100%);
+        padding: 1em;
+    border-radius: 26px;
+    box-shadow: #C9184A 0px 0.1px 1px 1px;
+    height: 100%;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+}
 
+.profile__title {
+    /* background: linear-gradient(#ff6c87 40%, #FF4D6D 100%); */
+    color: #FFF0F3;
+    font-family: 'Playthings';
+    font-weight: 100;
+    border-radius: 18px;
+    font-size: 2em;
+    padding: 4px;
+    max-width: 10em;
+    margin: auto 0;
+}
+
+.profile__info {
+    background: #FFF0F3;
+
+    padding: 1em;
+    border-radius: 18px;
+    box-shadow: #C9184A 0px 0.1px 1px 1px;
+    color: #C9184A;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1.3em;
+    margin-top: 0.5em;
+}
 
 
 .error-page {
@@ -660,7 +702,6 @@ body {
     margin-top: 0.5em;
     margin-bottom: 5em;
     text-align: left;
-
 }
 
 .error-page__title {

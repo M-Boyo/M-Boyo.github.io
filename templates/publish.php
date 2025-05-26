@@ -1,9 +1,9 @@
 <?php
-// filepath: c:\Users\sailv\Desktop\Projet web\templates\message.php
+// filepath: c:\Users\sailv\Desktop\Projet web\templates\publish.php
 ?>
 <section class="form-section">
     <form id="messageForm" class="form form--message" action="php/_publish.php" method="post">
-
+        <input type="hidden" name="ParentMessageId" value="<!--REPLACE_WITH_REPLY_TO-->">
         <div class="form__header">
             <div class="form__icon">💗</div>
             <h2 class="form__title">Envoyer un message</h2>

@@ -87,28 +87,32 @@ const urlRoute = (event) => {
 };
 
 const urlLocationHandler = async () => {
-    const location = window.location.pathname;
-    if (location.length == 0){
-        location = '/';
+    let location = window.location.pathname;
+    if (location.length == 0) {
+        location = "/";
     }
 
-    console.log(location);
+    let route = urlRoutes[location] || urlRoutes[404];
+    let templatePath = route.template;
 
-    const route = urlRoutes[location] || urlRoutes[404];
-    const html = await fetch(route.template).then((response) => response.text());
-    // document.getElementById("content").innerHTML = html;
-    // If you want to animate the page transition, uncomment the line below
-    await animatePageTransition(document.getElementById("content"), route);
+    // Extract reply_to from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const replyTo = urlParams.get('reply_to');
 
-    // document.getElementById("content").innerHTML += html;
+    // Fetch the template
+    let html = await fetch(templatePath).then((response) => response.text());
+
+    // Replace a placeholder in the template with the replyTo value
+    html = html.replace('<!--REPLACE_WITH_REPLY_TO-->', replyTo ? replyTo : '');
+
+    document.getElementById("content").innerHTML = html;
+    // await animatePageTransition(document.getElementById("content"), route);
     document.title = route.title + " | Bizou";
-    
 
     document
-    .querySelector('meta[name="description"]') // Use querySelector to get a single element
-    .setAttribute("content", route.description);
-
-}
+        .querySelector('meta[name="description"]')
+        .setAttribute("content", route.description);
+};
 
 
 window.onpopstate = urlLocationHandler;
